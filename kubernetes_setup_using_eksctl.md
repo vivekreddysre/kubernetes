@@ -37,16 +37,20 @@ You can follow same procedure in the official  AWS document [Getting started wit
 
 4. Create your cluster and nodes 
    ```sh
-   eksctl create cluster --name cluster-name  \
+   eksctl create cluster \
+   --name cluster-name  \
+   --version 1.22 \
    --region region-name \
+   --nodegroup-name linux-nodes \
    --node-type instance-type \
    --nodes-min 2 \
    --nodes-max 2 \ 
    --zones <AZ-1>,<AZ-2>
    
    example:
-   eksctl create cluster --name valaxy-cluster \
-      --region ap-south-1 \
+   eksctl create cluster \
+   --name valaxy-cluster \
+   --region ap-south-1 \
    --node-type t2.small \
     ```
 
